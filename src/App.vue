@@ -2,17 +2,19 @@
 
   <div id="app">
 
-    <H1>Hello or welcome!</H1>
+    <v-main-wrapper></v-main-wrapper>
 
   </div>
 
 </template>
 
 <script>
-
+import vMainWrapper from './components/v-main-wrapper'
 export default {
   name: 'App',
-  components: {}
+  components: {
+    vMainWrapper
+  }
 }
 </script>
 
