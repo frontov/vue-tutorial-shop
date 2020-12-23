@@ -2,7 +2,7 @@
   <div class="v-catalog">
     <h1>Catalog</h1>
   <v-catalog-item
-  v-for="product in products"
+  v-for="product in PRODUCTS"
   :key="product.article"
   :product_data="product"
   @sendDataToParent="showSelectedArticle"/>
@@ -11,6 +11,7 @@
 
 <script>
 import vCatalogItem from './v-catalog-item'
+import {mapActions, mapGetters} from 'vuex'
 
 export default {
   name: "v-catalog",
@@ -19,27 +20,27 @@ export default {
   },
   data() {
     return {
-      products: [{
-        image: "1.jpg",
-        name: "T-shirt 6",
-        price: 8700,
-        article: "T6",
-        available: true,
-        category: "Женские"
-      },{
-        image: "6.jpg",
-        name: "T-shirt 6",
-        price: 700,
-        article: "T5",
-        available: true,
-        category: "Женские"
-      }]
+
     }
   },
   methods:{
+    ...mapActions([
+        'GET_PRODUCTS_FROM_API'
+    ]),
     showSelectedArticle(data){
       console.log(data)
     }
+  },
+  mounted() {
+    this.GET_PRODUCTS_FROM_API()
+    .then((responce)=>{
+      if (responce.data){
+        console.log('success');
+      }
+    })
+  },
+  computed:{
+    ...mapGetters(['PRODUCTS'])
   }
 }
 </script>
