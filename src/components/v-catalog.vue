@@ -1,11 +1,11 @@
 <template>
   <div class="v-catalog">
     <h1>Catalog</h1>
-  <v-catalog-item
-  v-for="product in PRODUCTS"
-  :key="product.article"
-  :product_data="product"
-  @sendDataToParent="showSelectedArticle"/>
+    <v-catalog-item
+        v-for="product in PRODUCTS"
+        :key="product.article"
+        :product_data="product"
+        @addToCart="addToCart"/>
   </div>
 </template>
 
@@ -19,27 +19,27 @@ export default {
     vCatalogItem
   },
   data() {
-    return {
-
-    }
+    return {}
   },
-  methods:{
+  methods: {
     ...mapActions([
-        'GET_PRODUCTS_FROM_API'
+      'GET_PRODUCTS_FROM_API',
+      'ADD_TO_CART'
     ]),
-    showSelectedArticle(data){
+    addToCart(data) {
       console.log(data)
+      this.ADD_TO_CART(data)
     }
   },
   mounted() {
     this.GET_PRODUCTS_FROM_API()
-    .then((responce)=>{
-      if (responce.data){
-        console.log('success');
-      }
-    })
+        .then((responce) => {
+          if (responce.data) {
+            console.log('success');
+          }
+        })
   },
-  computed:{
+  computed: {
     ...mapGetters(['PRODUCTS'])
   }
 }
