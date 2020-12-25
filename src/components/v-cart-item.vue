@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="v-cart-item">
     <img class="v-cart-item__image" :src=" require('../assets/images/' +product_data.image) " alt="img">
     <div class="v-cart-item__info">
       <p>{{ product_data.name }}</p>
@@ -9,12 +9,13 @@
 
     <div>
       <p>quantity
-      {{ product_data.quantity }}
+        {{ product_data.quantity }}
       </p>
     </div>
-      <button class="btn"
-              @click="deleteFromCard">
-        Delete</button>
+    <button class="btn"
+            @click="deleteFromCard">
+      Delete
+    </button>
   </div>
 </template>
 
@@ -29,20 +30,20 @@ export default {
       }
     }
   },
-  methods:{
-    deleteFromCard(){
+  methods: {
+    deleteFromCard() {
       this.$emit('deleteFromCard')
     }
   },
   mounted() {
     // eslint-disable-next-line vue/no-mutating-props
-    this.product_data.quantity= 1;
+    // this.product_data.quantity= 1;
   }
 }
 </script>
 
 <style lang="scss">
-.v-cart-item{
+.v-cart-item {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
@@ -50,6 +51,7 @@ export default {
   box-shadow: 0 0 8px 0 #000000;
   padding: $padding*2;
   margin-bottom: $margin*2;
+
   &__image {
     max-width: 400px;
   }
