@@ -8,8 +8,13 @@
     </div>
 
     <div>
-      <p>quantity
-        {{ product_data.quantity }}
+      <p>quantity</p>
+      <p>
+        <span class="v-cart-item__quantity">
+          <span class="v-cart-item__quantity__btn" @click="decrement">-</span>
+          {{ product_data.quantity }}
+          <span class="v-cart-item__quantity__btn" @click="increment">+</span>
+        </span>
       </p>
     </div>
     <button class="btn"
@@ -31,8 +36,16 @@ export default {
     }
   },
   methods: {
+
+
     deleteFromCard() {
       this.$emit('deleteFromCard')
+    },
+    increment(){
+      this.$emit('increment')
+    },
+    decrement(){
+      this.$emit('decrement')
     }
   },
   mounted() {
@@ -55,5 +68,14 @@ export default {
   &__image {
     max-width: 400px;
   }
+  &__quantity{
+    font-size: 20px;
+    color: #aa0000;
+    &__btn{
+      cursor: pointer;
+    }
+  }
+
+
 }
 </style>

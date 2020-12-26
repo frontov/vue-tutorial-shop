@@ -23,6 +23,17 @@ export default Vuex.createStore({
         },
         DEL_FROM_CART: (state, index) => {
             state.cart.splice(index, 1);
+        },
+        INCREMENT_CART_ITEM_QUANTITY: (state, index) =>{
+            state.cart[index].quantity++;
+        },
+        DECREMENT_CART_ITEM_QUANTITY: (state, index) =>{
+            if (state.cart[index].quantity>1) {
+                state.cart[index].quantity--;
+            }
+            else {
+                state.cart.splice(index, 1);
+            }
         }
     },
     actions: {
@@ -44,6 +55,12 @@ export default Vuex.createStore({
         },
         DELETE_FROM_CART({commit}, index) {
             commit('DEL_FROM_CART', index);
+        },
+        INCREMENT_CART_ITEM({commit}, index){
+            commit('INCREMENT_CART_ITEM_QUANTITY', index);
+        },
+        DECREMENT_CART_ITEM({commit}, index){
+            commit('DECREMENT_CART_ITEM_QUANTITY', index);
         }
     },
     getters: {

@@ -33,7 +33,6 @@ export default {
       'ADD_TO_CART'
     ]),
     addToCart(data) {
-      console.log(data)
       this.ADD_TO_CART(data)
     }
   },
