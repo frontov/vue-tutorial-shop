@@ -61,7 +61,7 @@ export default {
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 0 8px 0 #000000;
+  box-shadow: 0 0 8px 0 $black;
   padding: $padding*2;
   margin-bottom: $margin*2;
 
@@ -70,7 +70,7 @@ export default {
   }
   &__quantity{
     font-size: 20px;
-    color: #aa0000;
+    color: $red;
     &__btn{
       cursor: pointer;
     }

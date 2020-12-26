@@ -29,7 +29,6 @@ export default {
 
 <style>
 .v-main-wrapper {
-  max-width: 500px;
   margin: 0 auto;
 }
 </style>

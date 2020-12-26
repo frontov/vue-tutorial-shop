@@ -2,13 +2,13 @@
 
 .btn {
   padding: $padding $padding*2;
-  background: $green-bg;
-  color: #ffffff;
+  background: $red;
+  color: $white;
   border: 0;
   border-radius: $radius;
   outline: none;
   cursor: pointer;
   &:hover {
-    background: $green-bg-hover;
+    background: $red-hover;
   }
 }

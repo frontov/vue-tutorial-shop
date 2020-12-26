@@ -76,7 +76,7 @@ export default {
     top: 10px;
     right: 10px;
     padding: $padding*2;
-    border: solid 1px #aa0000;
+    border: solid 1px $red;
   }
   &__total{
     position: fixed;
@@ -86,8 +86,8 @@ export default {
     padding: $padding;
     display: flex;
     justify-content: center;
-    background: #f0f0f0;
-    color: #aa0000;
+    background: $grey;
+    color: $red;
     //margin: $margin;
     font-size: 20px;
   }

@@ -65,7 +65,7 @@ export default {
     top: 10px;
     right: 10px;
     padding: $padding*2;
-    border: solid 1px #aa0000;
+    border: solid 1px $red;
   }
 }
 </style>
