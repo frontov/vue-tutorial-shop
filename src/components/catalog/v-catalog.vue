@@ -3,14 +3,16 @@
     <router-link :to="{name: 'cart'}">
       <div class="v-catalog__link">Cart: {{ CART.length }}</div>
     </router-link>
-    <h1>Catalog</h1>
+    <h1 class="v-catalog__header">Catalog</h1>
+
+    <div class="v-catalog__list">
     <v-catalog-item
-        class="v-catalog__list"
         v-for="product in PRODUCTS"
         :key="product.article"
         :product_data="product"
         @addToCart="addToCart"
     />
+    </div>
   </div>
 </template>
 
@@ -52,10 +54,11 @@ export default {
 
 <style lang="scss">
 .v-catalog {
+
   &__list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 
   }
@@ -66,6 +69,9 @@ export default {
     right: 10px;
     padding: $padding*2;
     border: solid 1px $red;
+  }
+  &__header{
+
   }
 }
 </style>

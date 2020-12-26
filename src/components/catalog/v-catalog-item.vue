@@ -33,11 +33,12 @@ export default {
 .v-catalog-item {
   flex-basis: 25%;
   box-shadow: 0 0 8px 0 $black;
-  padding: $padding*2;
-  margin-bottom: $margin*2;
-
+  padding-top: $padding;
+  margin-bottom: $margin;
+  min-width: 300px;
+  height: 300px;
   &__image {
-    width: 300px;
+    height: 150px;
   }
 }
 </style>

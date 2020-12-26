@@ -67,6 +67,7 @@ export default {
 
   &__image {
     max-width: 400px;
+    height: 150px;
   }
   &__quantity{
     font-size: 20px;
@@ -74,6 +75,11 @@ export default {
     &__btn{
       cursor: pointer;
     }
+  }
+  &__info{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
   }
 
 
