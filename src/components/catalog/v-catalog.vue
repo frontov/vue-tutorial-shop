@@ -6,12 +6,12 @@
     <h1 class="v-catalog__header">Catalog</h1>
 
     <div class="v-catalog__list">
-    <v-catalog-item
-        v-for="product in PRODUCTS"
-        :key="product.article"
-        :product_data="product"
-        @addToCart="addToCart"
-    />
+      <v-catalog-item
+          v-for="product in PRODUCTS"
+          :key="product.article"
+          :product_data="product"
+          @addToCart="addToCart"
+      />
     </div>
   </div>
 </template>
@@ -70,7 +70,8 @@ export default {
     padding: $padding*2;
     border: solid 1px $red;
   }
-  &__header{
+
+  &__header {
 
   }
 }
